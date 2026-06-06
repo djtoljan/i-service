@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Samsung Galaxy — ремонт в i-Service Красногорск</title>
+<style>
+  :root {{
+    --bg: #0b0d12; --surface: #13161e; --surface2: #1a1e28; --border: #252a36;
+    --text: #e4e6ed; --text2: #9299aa; --accent: #15b4fc; --green: #2ecc71;
+  }}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
+    background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;
+  }
+  .container{max-width:1100px;margin:0 auto;padding:0 24px}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
+  .reveal.visible{opacity:1;transform:translateY(0)}
+  header{
+    padding:18px 0;border-bottom:1px solid var(--border);
+    position:sticky;top:0;z-index:100;background:rgba(11,13,18,0.9);backdrop-filter:blur(16px);
+  }
+  header .container{display:flex;align-items:center;justify-content:space-between}
+  .logo{font-size:20px;font-weight:700;letter-spacing:-0.5px;color:#fff;text-decoration:none}
+  .logo span{color:var(--accent)}
+  .back-link{color:var(--text2);text-decoration:none;font-size:14px;transition:color 0.2s}
+  .back-link:hover{color:var(--accent)}
+  .header-phone{color:var(--text2);font-size:15px;text-decoration:none;font-weight:500;transition:color 0.2s}
+  .header-phone:hover{color:var(--accent)}
+  .hero{padding:50px 0 30px;text-align:center}
+  .hero h1{font-size:clamp(28px,5vw,44px);font-weight:800;letter-spacing:-2px;color:#fff}
+  .hero h1 span{color:var(--accent)}
+  .hero p{color:var(--text2);font-size:16px;margin-top:12px;max-width:500px;margin-left:auto;margin-right:auto}
+  section{padding:50px 0}
+  .models-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .model-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:14px;
+    padding:24px;transition:border-color 0.3s,transform 0.3s;
+  }
+  .model-card:hover{border-color:var(--accent);transform:translateY(-4px)}
+  .model-icon{
+    font-size:42px;text-align:center;margin-bottom:14px;
+    width:60px;height:60px;background:var(--surface2);border-radius:16px;
+    display:flex;align-items:center;justify-content:center;margin-left:auto;margin-right:auto;
+  }
+  .model-card h3{font-size:18px;color:#fff;text-align:center;margin-bottom:14px}
+  .price-list{list-style:none;color:var(--text2);font-size:13px}
+  .price-list li{
+    display:flex;justify-content:space-between;padding:8px 0;
+    border-bottom:1px solid rgba(37,42,54,0.3);
+  }
+  .price-list li:last-child{border-bottom:none}
+  .price-list .price{color:#fff;font-weight:600;white-space:nowrap}
+  .cta{
+    background:linear-gradient(135deg,rgba(21,180,252,0.08),transparent 50%);
+    border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+    text-align:center;padding:40px 0
+  }
+  .big-phone{
+    display:inline-flex;align-items:center;gap:12px;
+    font-size:clamp(24px,4vw,36px);font-weight:800;color:#fff;text-decoration:none;
+    transition:color 0.2s
+  }
+  .big-phone:hover{color:var(--accent)}
+  footer{border-top:1px solid var(--border);padding:28px 0;text-align:center;color:var(--text2);font-size:14px}
+  @media(max-width:768px){.models-grid{grid-template-columns:1fr 1fr}.hero h1{font-size:24px}}
+  @media(max-width:480px){.models-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <a href="index.html" class="back-link">← i-Service</a>
+    <a href="index.html" class="logo">i-<span>Service</span></a>
+    <a href="tel:+74994502599" class="header-phone">+7 (499) 450-25-99</a>
+  </div>
+</header>
+<section class="hero reveal">
+  <div class="container">
+    <h1>Ремонт <span>Samsung</span></h1>
+    <p>Galaxy S, A, Note, Fold — замена дисплеев, аккумуляторов и любые ремонты</p>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="models-grid">
+      <div class="model-card reveal">
+        <div class="model-icon">📱</div>
+        <h3>Galaxy S20 / S21 / S22 / S23</h3>
+        <ul class="price-list">
+          <li><span>Замена дисплея (оригинал)</span><span class="price">от 9 500 ₽</span></li>
+          <li><span>Замена дисплея (копия)</span><span class="price">от 6 500 ₽</span></li>
+          <li><span>Замена аккумулятора</span><span class="price">от 2 500 ₽</span></li>
+          <li><span>Замена задней крышки</span><span class="price">от 2 000 ₽</span></li>
+          <li><span>Ремонт после воды</span><span class="price">от 2 000 ₽</span></li>
+        </ul>
+      </div>
+      <div class="model-card reveal">
+        <div class="model-icon">📱</div>
+        <h3>Galaxy S10 / Note 10</h3>
+        <ul class="price-list">
+          <li><span>Замена дисплея (оригинал)</span><span class="price">от 7 500 ₽</span></li>
+          <li><span>Замена дисплея (копия)</span><span class="price">от 4 500 ₽</span></li>
+          <li><span>Замена аккумулятора</span><span class="price">от 2 200 ₽</span></li>
+          <li><span>Замена стекла</span><span class="price">от 2 500 ₽</span></li>
+        </ul>
+      </div>
+      <div class="model-card reveal">
+        <div class="model-icon">📱</div>
+        <h3>Galaxy S8 / S9 / Note 8-9</h3>
+        <ul class="price-list">
+          <li><span>Замена дисплея (оригинал)</span><span class="price">от 5 500 ₽</span></li>
+          <li><span>Замена дисплея (копия)</span><span class="price">от 3 500 ₽</span></li>
+          <li><span>Замена аккумулятора</span><span class="price">от 1 800 ₽</span></li>
+          <li><span>Замена стекла</span><span class="price">от 2 000 ₽</span></li>
+        </ul>
+      </div>
+      <div class="model-card reveal">
+        <div class="model-icon">📱</div>
+        <h3>Galaxy A-серия (A50/A70/A80)</h3>
+        <ul class="price-list">
+          <li><span>Замена дисплея</span><span class="price">от 4 000 ₽</span></li>
+          <li><span>Замена аккумулятора</span><span class="price">от 1 800 ₽</span></li>
+          <li><span>Замена стекла</span><span class="price">от 2 000 ₽</span></li>
+          <li><span>Ремонт после воды</span><span class="price">от 1 500 ₽</span></li>
+        </ul>
+      </div>
+      <div class="model-card reveal">
+        <div class="model-icon">📱</div>
+        <h3>Galaxy A-серия (A10-A30)</h3>
+        <ul class="price-list">
+          <li><span>Замена дисплея</span><span class="price">от 3 000 ₽</span></li>
+          <li><span>Замена аккумулятора</span><span class="price">от 1 500 ₽</span></li>
+          <li><span>Замена стекла</span><span class="price">от 1 500 ₽</span></li>
+        </ul>
+      </div>
+      <div class="model-card reveal">
+        <div class="model-icon">📱</div>
+        <h3>Galaxy Fold / Flip</h3>
+        <ul class="price-list">
+          <li><span>Замена внутреннего дисплея</span><span class="price">от 15 000 ₽</span></li>
+          <li><span>Замена внешнего дисплея</span><span class="price">от 5 000 ₽</span></li>
+          <li><span>Замена аккумулятора</span><span class="price">от 3 500 ₽</span></li>
+          <li><span>Ремонт шарнира</span><span class="price">от 4 000 ₽</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="cta reveal">
+  <div class="container">
+    <p style="color:var(--text2);font-size:14px;margin-bottom:12px;">Звоните — проконсультируем по вашей модели</p>
+    <a href="tel:+74994502599" class="big-phone">+7 (499) 450-25-99</a>
+    <p style="color:var(--text2);font-size:14px;margin-top:12px;">Ежедневно с 10:00 до 20:00</p>
+  </div>
+</div>
+<footer>
+  <div class="container">
+    © 2026 i-Service — ремонт Samsung в Красногорске · <a href="index.html" style="color:var(--accent);">На главную</a>
+  </div>
+</footer>
+<script>
+document.querySelectorAll('.reveal').forEach(el=>{
+  new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})
+  },{threshold:0.1}).observe(el)
+});
+</script>
+</body>
+</html>
