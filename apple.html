@@ -18,9 +18,8 @@
     font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
     background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;
   }
-  .container{max-width:1100px;margin:0 auto;padding:0 24px}
+  .container{max-width:900px;margin:0 auto;padding:0 24px}
   @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(21,180,252,0.15)}50%{box-shadow:0 0 0 14px rgba(21,180,252,0)}}
   .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
   .reveal.visible{opacity:1;transform:translateY(0)}
 
@@ -36,31 +35,33 @@
   .header-phone{color:var(--text2);font-size:15px;text-decoration:none;font-weight:500;transition:color 0.2s}
   .header-phone:hover{color:var(--accent)}
 
-  .hero{padding:50px 0 30px;text-align:center}
+  .hero{padding:50px 0 20px;text-align:center}
   .hero h1{font-size:clamp(28px,5vw,44px);font-weight:800;letter-spacing:-2px;color:#fff}
   .hero h1 span{color:var(--accent)}
-  .hero p{color:var(--text2);font-size:16px;margin-top:12px;max-width:500px;margin-left:auto;margin-right:auto}
+  .hero p{color:var(--text2);font-size:16px;margin-top:10px}
 
-  section{padding:50px 0}
-  .models-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .model-card{
-    background:var(--surface);border:1px solid var(--border);border-radius:14px;
-    padding:24px;transition:border-color 0.3s,transform 0.3s;
+  section{padding:40px 0}
+  .section-label{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--accent);margin-bottom:8px}
+  .section-title{font-size:22px;font-weight:700;color:#fff;margin-bottom:24px}
+
+  .price-table{width:100%;border-collapse:collapse;font-size:14px}
+  .price-table th{
+    text-align:left;padding:12px 14px;color:var(--text2);font-weight:500;font-size:12px;
+    text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid var(--border);
+    position:sticky;top:68px;background:var(--surface);z-index:2;
   }
-  .model-card:hover{border-color:var(--accent);transform:translateY(-4px)}
-  .model-icon{
-    font-size:42px;text-align:center;margin-bottom:14px;
-    width:60px;height:60px;background:var(--surface2);border-radius:16px;
-    display:flex;align-items:center;justify-content:center;margin-left:auto;margin-right:auto;
-  }
-  .model-card h3{font-size:18px;color:#fff;text-align:center;margin-bottom:14px}
-  .price-list{list-style:none;color:var(--text2);font-size:13px}
-  .price-list li{
-    display:flex;justify-content:space-between;padding:8px 0;
-    border-bottom:1px solid rgba(37,42,54,0.3);
-  }
-  .price-list li:last-child{border-bottom:none}
-  .price-list .price{color:#fff;font-weight:600;white-space:nowrap}
+  .price-table td{padding:11px 14px;border-bottom:1px solid rgba(37,42,54,0.4);transition:background 0.2s}
+  .price-table tr:hover td{background:var(--surface2)}
+  .price-table td:last-child{text-align:right;font-weight:600;white-space:nowrap}
+  .price-table td:nth-child(2){text-align:right;font-weight:600;color:var(--green);white-space:nowrap}
+  .price-table td:nth-child(3){text-align:right;font-weight:600;color:#fff;white-space:nowrap}
+  .model-name{color:#fff;font-weight:500}
+  .new-badge{font-size:10px;background:var(--accent);color:#000;padding:2px 6px;border-radius:4px;margin-left:6px;font-weight:700}
+  .new-badge2{font-size:10px;background:var(--green);color:#000;padding:2px 6px;border-radius:4px;margin-left:4px;font-weight:700}
+  .confirm{color:var(--text2);font-size:13px;font-style:italic}
+
+  .note{font-size:13px;color:var(--text2);margin-top:16px;line-height:1.6}
+  .note span{color:var(--accent)}
 
   .cta{
     background:linear-gradient(135deg,rgba(21,180,252,0.08),transparent 50%);
@@ -76,12 +77,12 @@
 
   footer{border-top:1px solid var(--border);padding:28px 0;text-align:center;color:var(--text2);font-size:14px}
 
-  @media(max-width:768px){
-    .models-grid{grid-template-columns:1fr 1fr}
+  .divider{height:1px;background:var(--border);margin:10px 0 30px}
+
+  @media(max-width:600px){
+    .price-table{font-size:12px}
+    .price-table td,.price-table th{padding:8px 6px}
     .hero h1{font-size:24px}
-  }
-  @media(max-width:480px){
-    .models-grid{grid-template-columns:1fr}
   }
 </style>
 </head>
@@ -98,111 +99,87 @@
 <section class="hero reveal">
   <div class="container">
     <h1>Ремонт <span>iPhone</span></h1>
-    <p>Замена дисплеев, аккумуляторов, стекол и любые другие ремонты</p>
+    <p>Прайс-лист · актуально на июнь 2026</p>
   </div>
 </section>
 
-<section>
-  <div class="container">
-    <div class="models-grid">
-
-      <div class="model-card reveal">
-        <div class="model-icon">📱</div>
-        <h3>iPhone 14 / 14 Pro</h3>
-        <ul class="price-list">
-          <li><span>Замена дисплея (оригинал)</span><span class="price">от 12 000 ₽</span></li>
-          <li><span>Замена дисплея (копия)</span><span class="price">от 7 500 ₽</span></li>
-          <li><span>Замена аккумулятора</span><span class="price">от 3 500 ₽</span></li>
-          <li><span>Замена заднего стекла</span><span class="price">от 4 000 ₽</span></li>
-          <li><span>Ремонт после воды</span><span class="price">от 2 500 ₽</span></li>
-        </ul>
-      </div>
-
-      <div class="model-card reveal">
-        <div class="model-icon">📱</div>
-        <h3>iPhone 13 / 13 Pro</h3>
-        <ul class="price-list">
-          <li><span>Замена дисплея (оригинал)</span><span class="price">от 9 500 ₽</span></li>
-          <li><span>Замена дисплея (копия)</span><span class="price">от 6 500 ₽</span></li>
-          <li><span>Замена аккумулятора</span><span class="price">от 3 000 ₽</span></li>
-          <li><span>Замена заднего стекла</span><span class="price">от 3 500 ₽</span></li>
-          <li><span>Ремонт после воды</span><span class="price">от 2 500 ₽</span></li>
-        </ul>
-      </div>
-
-      <div class="model-card reveal">
-        <div class="model-icon">📱</div>
-        <h3>iPhone 12 / 12 Pro</h3>
-        <ul class="price-list">
-          <li><span>Замена дисплея (оригинал)</span><span class="price">от 7 500 ₽</span></li>
-          <li><span>Замена дисплея (копия)</span><span class="price">от 5 500 ₽</span></li>
-          <li><span>Замена аккумулятора</span><span class="price">от 2 800 ₽</span></li>
-          <li><span>Замена заднего стекла</span><span class="price">от 3 000 ₽</span></li>
-          <li><span>Ремонт после воды</span><span class="price">от 2 000 ₽</span></li>
-        </ul>
-      </div>
-
-      <div class="model-card reveal">
-        <div class="model-icon">📱</div>
-        <h3>iPhone 11 / 11 Pro</h3>
-        <ul class="price-list">
-          <li><span>Замена дисплея (оригинал)</span><span class="price">от 6 500 ₽</span></li>
-          <li><span>Замена дисплея (копия)</span><span class="price">от 4 500 ₽</span></li>
-          <li><span>Замена аккумулятора</span><span class="price">от 2 500 ₽</span></li>
-          <li><span>Замена стекла камеры</span><span class="price">от 1 500 ₽</span></li>
-          <li><span>Ремонт после воды</span><span class="price">от 2 000 ₽</span></li>
-        </ul>
-      </div>
-
-      <div class="model-card reveal">
-        <div class="model-icon">📱</div>
-        <h3>iPhone X / XR / XS</h3>
-        <ul class="price-list">
-          <li><span>Замена дисплея (оригинал)</span><span class="price">от 5 500 ₽</span></li>
-          <li><span>Замена дисплея (копия)</span><span class="price">от 4 500 ₽</span></li>
-          <li><span>Замена аккумулятора</span><span class="price">от 2 500 ₽</span></li>
-          <li><span>Замена заднего стекла</span><span class="price">от 2 500 ₽</span></li>
-          <li><span>Ремонт после воды</span><span class="price">от 2 000 ₽</span></li>
-        </ul>
-      </div>
-
-      <div class="model-card reveal">
-        <div class="model-icon">📱</div>
-        <h3>iPhone 6 / 6s / 7 / 8</h3>
-        <ul class="price-list">
-          <li><span>Замена дисплея (оригинал)</span><span class="price">от 4 500 ₽</span></li>
-          <li><span>Замена дисплея (копия)</span><span class="price">от 3 000 ₽</span></li>
-          <li><span>Замена аккумулятора</span><span class="price">от 1 800 ₽</span></li>
-          <li><span>Замена стекла (отдельно)</span><span class="price">от 2 000 ₽</span></li>
-          <li><span>Ремонт после воды</span><span class="price">от 1 500 ₽</span></li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-</section>
-
+<!-- DISPLAY -->
 <section style="background:var(--surface);">
-  <div class="container">
-    <h2 style="font-size:24px;color:#fff;margin-bottom:8px;">Дополнительные услуги</h2>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;color:var(--text2);font-size:15px;">
-      <span>Замена разъёма зарядки — от 1 800 ₽</span>
-      <span>Замена динамика — от 1 200 ₽</span>
-      <span>Замена микрофона — от 1 500 ₽</span>
-      <span>Замена кнопок (Home/громкость) — от 1 000 ₽</span>
-      <span>Замена шлейфа дисплея — от 2 000 ₽</span>
-      <span>Замена корпуса — от 3 500 ₽</span>
-      <span>Диагностика — бесплатно</span>
-      <span>Чистка после воды — от 1 500 ₽</span>
-    </div>
+  <div class="container reveal">
+    <div class="section-label">📱 Дисплей (LCD)</div>
+    <div class="section-title">Замена дисплейного модуля</div>
+    <table class="price-table">
+      <thead>
+        <tr><th>Модель</th><th>Оригинал</th><th>Копия</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="model-name">iPhone 5 / 5s / 5c / SE</td><td>2 500 ₽</td><td>2 000 ₽</td></tr>
+        <tr><td class="model-name">iPhone 6 / 6s / 7</td><td>3 500 ₽</td><td>2 500 ₽</td></tr>
+        <tr><td class="model-name">iPhone 6+ / 6s+ / 7+</td><td>4 500 ₽</td><td>3 000 ₽</td></tr>
+        <tr><td class="model-name">iPhone 8 / 8+</td><td>5 500 ₽</td><td>3 000 ₽</td></tr>
+        <tr><td class="model-name">iPhone X / XR</td><td>9 000 ₽</td><td>5 000 ₽</td></tr>
+        <tr><td class="model-name">iPhone XS</td><td>9 000 ₽</td><td>5 000 ₽</td></tr>
+        <tr><td class="model-name">iPhone XS Max</td><td>11 000 ₽</td><td>6 000 ₽</td></tr>
+        <tr><td class="model-name">iPhone 11</td><td>8 500 ₽</td><td>5 500 ₽</td></tr>
+        <tr><td class="model-name">iPhone 11 Pro</td><td>10 500 ₽</td><td>6 500 ₽</td></tr>
+        <tr><td class="model-name">iPhone 12 / 12 Pro</td><td>13 500 ₽</td><td>6 500 ₽</td></tr>
+        <tr><td class="model-name">iPhone 12 Pro Max</td><td>18 000 ₽</td><td>8 000 ₽</td></tr>
+        <tr><td class="model-name">iPhone 13</td><td>14 000 ₽</td><td>8 000 ₽</td></tr>
+        <tr><td class="model-name">iPhone 13 Pro</td><td>18 000 ₽</td><td>8 000 ₽</td></tr>
+        <tr><td class="model-name">iPhone 13 Pro Max</td><td>20 000 ₽</td><td>9 000 ₽</td></tr>
+        <tr><td class="model-name">iPhone 14</td><td>16 500 ₽</td><td>10 000 ₽</td></tr>
+        <tr><td class="model-name">iPhone 14 Pro <span class="new-badge2">⚡</span></td><td>26 000 ₽</td><td>10 000 ₽</td></tr>
+        <tr><td class="model-name">iPhone 14 Pro Max <span class="new-badge2">⚡</span></td><td>26 000 ₽</td><td>11 000 ₽</td></tr>
+        <tr><td class="model-name">iPhone 15</td><td>24 000 ₽</td><td>14 000 ₽</td></tr>
+        <tr><td class="model-name">iPhone 15 Pro <span class="new-badge2">⚡</span></td><td>30 000 ₽</td><td>15 000 ₽</td></tr>
+        <tr><td class="model-name">iPhone 15 Pro Max <span class="new-badge2">⚡</span></td><td>30 000 ₽</td><td>15 000 ₽</td></tr>
+        <tr><td class="model-name">iPhone 16 <span class="new-badge2">⚡</span></td><td>28 000 ₽</td><td class="confirm">уточн.</td></tr>
+        <tr><td class="model-name">iPhone 16 Pro</td><td>39 000 ₽</td><td class="confirm">уточн.</td></tr>
+        <tr><td class="model-name">iPhone 16 Pro Max</td><td>42 000 ₽</td><td class="confirm">уточн.</td></tr>
+        <tr><td class="model-name">iPhone 17 <span class="new-badge">NEW</span></td><td>48 000 ₽</td><td class="confirm">уточн.</td></tr>
+        <tr><td class="model-name">iPhone 17 Pro <span class="new-badge">NEW</span></td><td>54 000 ₽</td><td class="confirm">уточн.</td></tr>
+        <tr><td class="model-name">iPhone 17 Pro Max <span class="new-badge">NEW</span></td><td>65 000 ₽</td><td class="confirm">уточн.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- BATTERY -->
+<section>
+  <div class="container reveal">
+    <div class="section-label">🔋 Аккумулятор</div>
+    <div class="section-title">Замена аккумулятора</div>
+    <table class="price-table">
+      <thead>
+        <tr><th>Модель</th><th style="text-align:right">Цена</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="model-name">iPhone 4 / 4s / 5 / 5s / 5c</td><td>1 500 ₽</td></tr>
+        <tr><td class="model-name">iPhone 6 / 6s</td><td>1 800 ₽</td></tr>
+        <tr><td class="model-name">iPhone 6+ / 6s+ / 7 / 7+</td><td>2 000 ₽</td></tr>
+        <tr><td class="model-name">iPhone 8 / 8+</td><td>2 500 ₽</td></tr>
+        <tr><td class="model-name">iPhone X / XS / XR</td><td>3 000 ₽</td></tr>
+        <tr><td class="model-name">iPhone XS Max / 11 / 11 Pro</td><td>3 500 ₽</td></tr>
+        <tr><td class="model-name">iPhone 11 Pro Max</td><td>4 000 ₽</td></tr>
+        <tr><td class="model-name">iPhone 12 / 13 / 14 / 15</td><td>5 500 ₽</td></tr>
+        <tr><td class="model-name">iPhone 12-15 Pro</td><td>6 500 ₽</td></tr>
+        <tr><td class="model-name">iPhone 12-15 Pro Max</td><td>7 500 ₽</td></tr>
+        <tr><td class="model-name">iPhone 16 / 16 Plus <span class="new-badge">NEW</span></td><td>8 500 ₽</td></tr>
+        <tr><td class="model-name">iPhone 16 Pro / Pro Max <span class="new-badge">NEW</span></td><td>10 000 ₽</td></tr>
+        <tr><td class="model-name">iPhone 17 (все) <span class="new-badge">NEW</span></td><td class="confirm">уточн.</td></tr>
+      </tbody>
+    </table>
+    <p class="note"><span>⚡</span> Pro-модели (14/15/16) — Always-On дисплей, повышенная сложность замены<br>
+    <span class="new-badge">NEW</span> — новая модель, цена может корректироваться<br>
+    <span class="confirm">уточн.</span> — уточняйте у мастера</p>
   </div>
 </section>
 
 <div class="cta reveal">
   <div class="container">
-    <p style="color:var(--text2);font-size:14px;margin-bottom:12px;">Звоните — проконсультируем по вашей модели</p>
+    <p style="color:var(--text2);font-size:14px;margin-bottom:12px;">Звоните — бесплатная диагностика за 15 минут</p>
     <a href="tel:+74994502599" class="big-phone">+7 (499) 450-25-99</a>
-    <p style="color:var(--text2);font-size:14px;margin-top:12px;">Ежедневно с 10:00 до 20:00</p>
+    <p style="color:var(--text2);font-size:14px;margin-top:12px;">Три филиала в Красногорске · Ежедневно с 10:00 до 20:00</p>
   </div>
 </div>
 
